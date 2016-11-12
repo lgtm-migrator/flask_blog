@@ -13,6 +13,7 @@ def row_2_blog(row):
 @blog.route("/", defaults={'page': 1})
 @blog.route("/page/<page>")
 def view_posts(page):
+    """view post page"""
     rs = g.db.execute(
         'select * from blog order by id desc limit ?,10', [(page - 1) * 10])
     posts = [row_2_blog(row) for row in rs.fetchall()]
