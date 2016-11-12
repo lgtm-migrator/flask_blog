@@ -1,7 +1,17 @@
 {% extends 'layout.html'%} {% block page %}
-<form method="POST">
-    <input type="text" name="username" value="" placeholder="username">
-    <input type="password" name="password" placeholder="password">
-    <input type="submit">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}">
+
+<h3>Login</h3>
+<form class="loginform" method="POST" role="form">
+    <div class="form-group">
+        <input type="text" class="form-control" name="username" value="" placeholder="username">
+    </div>
+    <div class="form-group">
+        <input type="password" class="form-control" name="password" placeholder="password">
+
+    </div>
+    <div class="form-group">
+        <input type="submit" class="form-control" class="btn btn-default" value="LOGIN">
+    </div>
 </form>
 {% endblock %}

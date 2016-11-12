@@ -1,6 +1,6 @@
 # Flask Blog
 
-A blog implements with flask framework
+A blog implemented with flask framework
 
 with 
 
@@ -15,13 +15,23 @@ with
 
 recommend use virtualenv
 
-YOU NEED BOWER TO INSTALL FRONTEND DEPENDENCE
+YOU NEED BOWER TO INSTALL FRONTEND DEPENDENCE,you can google or baidu about it,usually you can use```npm i -g bower```to install it
 
-```bash
+```
 pip install -r requirements.txt
 bower install 
 ```
 
+# Init DB
+
+maybe you have to install sqlite3 first in your os, like ubuntu ```sudo apt install sqlite3```
+
+```
+sqlite3 fblog.db < db.sql
+```
+
 # Start
 
+```
 python webapp.py
+```

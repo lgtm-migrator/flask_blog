@@ -1,12 +1,14 @@
 <ul>
+    {% if session['user'] %}
+    <li>{{session['user'].username}}</li><br>
+    {% endif%}
     <li><a href="/">Home</a></li>
     <li><a href="{{url_for('blog.view_posts')}}">Blogs</a></li>
     {% if session['user'] %} 
     <li><a href="{{url_for('blog.new_post_page')}}">New Blog</a></li>
-    <li><a href="/logout">Logout</a></li>
+    <li><a href="{{url_for('home.logout_api')}}">Logout</a></li>
     {% else %}
-    <li><a href="/contact">Contact</a></li>
-    <li><a href="/login">Login</a></li>
+    <li><a href="{{url_for('home.login_page')}}">Login</a></li>
     {% endif %}
-    <li><a href="/about">About</a></li>
+    <li><a href="{{url_for('home.about_page')}}">About</a></li>
 </ul>

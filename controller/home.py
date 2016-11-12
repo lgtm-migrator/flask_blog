@@ -5,12 +5,12 @@ home = Blueprint('home', __name__)
 
 @home.route("/")
 def home_page():
-    return render_template("home.html")
+    return render_template("home.html",title="Home")
 
 
 @home.route('/login', methods=['GET'])
 def login_page():
-    return render_template('login.html')
+    return render_template('login.html', title="Login")
 
 
 @home.route('/login', methods=["POST"])
@@ -24,7 +24,13 @@ def login_api():
     else:
         return redirect(url_for('home.login_page'))
 
+
 @home.route('/logout')
 def logout_api():
-    session.pop('user',None)
+    session.pop('user', None)
     return redirect(url_for('home.login_page'))
+
+
+@home.route('/about')
+def about_page():
+    return render_template('about.html')

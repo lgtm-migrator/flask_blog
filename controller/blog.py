@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, g, session, abort, Markup
+from flask import Blueprint, render_template, request, g, session, abort, Markup,redirect,url_for
 import markdown
 
 blog = Blueprint('blog', __name__, url_prefix="/blog",
@@ -6,6 +6,7 @@ blog = Blueprint('blog', __name__, url_prefix="/blog",
 
 
 def row_2_blog(row):
+    """transfer row to dict"""
     return dict(id=row[0], title=row[1], content=Markup(markdown.markdown(row[2])), contentsrc=row[2], userid=row[3], createdate=row[4])
 
 
@@ -29,9 +30,9 @@ def new_post_api():
                  request.form['title'], request.form['content'], session['user']['id']])
     g.db.commit()
     if request.form['content'] and request.form['title']:
-        return "OK"
+        return redirect(url_for('blog.view_posts'))
     else:
-        return "false"
+        abort(500)
 
 
 @blog.route("/single/<id>")
@@ -39,8 +40,7 @@ def view_single_post(id):
     rs = g.db.execute("select * from blog where id = ?", [id])
     if rs.arraysize > 0:
         tmp = rs.fetchone()
-        post = {"id": tmp[0], "title": tmp[1], "content": Markup(markdown.markdown(tmp[2])), "contentsrc": tmp[
-            2], "userid": tmp[3], "createdate": tmp[4]}
-        return render_template("single_post.html", post=post)
+        post = row_2_blog(tmp)
+        return render_template("single_post.html", post=post,title=post["title"])
     else:
         abort(404)

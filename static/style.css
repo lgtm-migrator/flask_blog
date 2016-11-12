@@ -3,15 +3,16 @@
     margin-top: 50px
 }
 
-ul {
-    list-style-type: none
-}
 
 body > div > div > div.col-xs-3.col-sm-3.col-md-s > ul{
+    list-style-type: none;
     font-size: 3rem;
     margin: 10px
 }
-
+body > div > div > div.col-xs-9.col-sm-9.col-md-9{
+    position: relative;
+    top :30px;
+}
 a, a:link, a:hover, a:visited {
     color: black
 }
@@ -21,3 +22,4 @@ footer{
     right: 10%;
     bottom: 0;
 }
+
