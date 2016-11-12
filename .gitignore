@@ -1,0 +1,19 @@
+
+
+# venv
+
+venv
+
+
+# bower lib
+
+static/lib
+
+# python cache 
+
+*.pyc
+__pycache__
+
+# vscode 
+
+.vscode/.*
