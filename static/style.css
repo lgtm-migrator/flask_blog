@@ -2,3 +2,16 @@
 .container {
     margin-top: 50px
 }
+
+ul {
+    list-style-type: none
+}
+
+body > div > div > div.col-xs-3.col-sm-3.col-md-s > ul{
+    font-size: 3rem;
+    margin: 10px
+}
+
+a, a:link, a:hover, a:visited {
+    color: black
+}

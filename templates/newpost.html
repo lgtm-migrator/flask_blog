@@ -1,0 +1,12 @@
+{% extends "layout.html" %} {% block page %}
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/editor/0.1.0/editor.css">
+<script src="//cdn.jsdelivr.net/editor/0.1.0/editor.js"></script>
+<script src="//cdn.jsdelivr.net/editor/0.1.0/marked.js"></script>
+<script async src="{{ url_for('static',filename='js/newpost.js') }}"></script>
+<div class="editor-wrapper">
+    <input class="title" type="text" placeholder="Title" />
+    <textarea id="editor" placeholder="Content here ...."></textarea>
+</div>
+
+{% endblock %}

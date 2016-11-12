@@ -7,4 +7,4 @@ app.register_blueprint(home)
 app.register_blueprint(blog)
 
 if __name__  == '__main__':
-    app.run()
+    app.run(debug=True)
