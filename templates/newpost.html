@@ -5,8 +5,12 @@
 <script src="//cdn.jsdelivr.net/editor/0.1.0/marked.js"></script>
 <script async src="{{ url_for('static',filename='js/newpost.js') }}"></script>
 <div class="editor-wrapper">
-    <input class="title" type="text" placeholder="Title" />
-    <textarea id="editor" placeholder="Content here ...."></textarea>
+    <form method="POST" action="{{ url_for('blog.new_post_api') }}">
+        <input name="title" class="title" type="text" placeholder="Title" />
+        <textarea id="editor" name="content" placeholder="Content here ...."></textarea>
+        <input type="submit">
+    </form>
+
 </div>
 
 {% endblock %}

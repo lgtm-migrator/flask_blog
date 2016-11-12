@@ -15,3 +15,9 @@ body > div > div > div.col-xs-3.col-sm-3.col-md-s > ul{
 a, a:link, a:hover, a:visited {
     color: black
 }
+
+footer{
+    position: absolute;
+    right: 10%;
+    bottom: 0;
+}
