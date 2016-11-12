@@ -24,4 +24,4 @@ def teardown_request(exception):
         g.db.close()
 
 if __name__  == '__main__':
-    app.run(debug=True,use_debugger=False,use_reloader=False)
+    app.run()

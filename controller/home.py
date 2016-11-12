@@ -33,4 +33,4 @@ def logout_api():
 
 @home.route('/about')
 def about_page():
-    return render_template('about.html')
+    return render_template('about.html',title="About")

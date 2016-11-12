@@ -30,6 +30,8 @@ maybe you have to install sqlite3 first in your os, like ubuntu ```sudo apt inst
 sqlite3 fblog.db < db.sql
 ```
 
+default user is ```admin``` , password also is ```admin```
+
 # Start
 
 ```
