@@ -1,0 +1,20 @@
+addons:
+  apt:
+    packages:
+    - npm
+    - sqlite3
+install:
+- npm i -g bower
+script:
+- sqlite3 fblog.db < db.sql
+- bower i
+deploy:
+  provider: cloudfoundry
+  api: https://api.run.pivotal.io
+  username: mrls@live.cn
+  password:
+    secure: gGqLSx6+uwFbs8GxpNBNuBrw5U9a2BM+d3D80UboUJqvEPpgAPWPaqYR2lnHtqzLvhdmXruyh2MPYW7VYDFE3YcncXWpC0/xBYN0Po/DDA0BejwzAN7u+oiJKi/wJx1CKeV/Cj+c2tJw1xjroil239MPsTrDdkQGSwj9e7N8DKRff7B84IcWIjPIN0rz8Qj8Tyg4KRHCLXryLK/N7DiYGhNx6tNEmcLipjPtMBJWHRT1btloyiTKw+ycNkYMecA7CqKTuUDhskxD6hbWBZduptPcuV3kDlBa6RlPRtJG271eU2v8LKDPflZuHOGlmjjweKmi4f68zI0iOFcll7ul5I0OzTVXlFWk2lclWMqFjl4ROEphIZqMUxybDC2z8M7CrjYLNmd3eJhquv6X2/3SOAG8RveGOsM6dHnRIKxYp8jpHLtLhWLZGPwTIrIsSjwIhEU1eOfgH3S1PnEnHVJ88xuhvW4HdAOixstiCv2Gs6LsIZCEj7eW99zks0dpecBdygLNR9HXd5wLHXR2VcqSyuIH9N7xbD5hfd8FGBI023uiAnTAg0lwCv4lxQGwd1l0sFwNLP67AeZoUeRr+6cTdC738HvkIIYEnhfLlqi0yS0SY7UkYCYGSePNONKbYQRwjjah0PH1BmpVgLny8q/yxBp3WCv/0pmTbHYoHveA8D8=
+  organization: mrls-org
+  space: development
+  on:
+    repo: Soontao/flask_blog

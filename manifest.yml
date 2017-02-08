@@ -1,0 +1,6 @@
+---
+applications:
+-  name: flask-blog-theo
+   memory: 128M
+   disk_quota: 256M
+   buildpack: python_buildpack

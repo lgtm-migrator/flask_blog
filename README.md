@@ -1,8 +1,10 @@
 # Flask Blog
 
+[![Build Status](https://travis-ci.org/Soontao/flask_blog.svg?branch=master)](https://travis-ci.org/Soontao/flask_blog)
+
 A blog implemented with flask framework
 
-with 
+with
 
 * Flask 0.11
 * SQLite3
@@ -12,7 +14,7 @@ with
 * Python 3.5
 
 
-## Quick Start 
+## Quick Start
 
 If you have docker container, you can run following command line, to build image and run it
 
@@ -62,6 +64,8 @@ python webapp.py
 ## Other
 
 Under MIT.
+
+CI with travis ci, deploy on cloud foundry
 
 No more.
 
